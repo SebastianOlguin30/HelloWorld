@@ -10,7 +10,7 @@ resource "docker_image" "my_app_image" {
 }
 
 resource "docker_container" "my_app_container" {
-  image = docker_image.my_app_image.latest
+  image = "${docker_image.my_app_image.latest}"
   name  = "myapp"
   ports {
     internal = 8080
